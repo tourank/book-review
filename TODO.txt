@@ -1,0 +1,1 @@
+implement a home page that provides the option to login and/or register
