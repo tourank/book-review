@@ -2,16 +2,17 @@
 <html>
     <head>
         <title>Welcome</title>
-        <link rel="stylesheet" href="templates/styles.css">
-
-    </head>
+        <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css')}}">-->
+        <style> 
+                div {
+                    background-color: teal;
+                    width: 500px;
+                    height: 400px;
+                }
+        </style>
+   </head>
     <body>
         <h1>Welcome</h1>
-        <form>
-            <input type="text" placeholder="User Name" name="name">
-            <input type="text" placeholder="Password" name="name">
-            <button>Submit</button>
-        </form>
     </body>
 </html>
 

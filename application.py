@@ -18,7 +18,7 @@ Session(app)
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
-
+app = Flask(__name__) 
 @app.route("/")
 def index():
-    return render_template("prototype.html")
+    return render_template("size.html")
