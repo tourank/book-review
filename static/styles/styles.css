@@ -1,9 +1,36 @@
 body {
-  background-color: beige;
-  width: auto;
-  height: auto;
+  background-image: url(https://miro.medium.com/0*L5spudfxjpJRzWFL); 
+  background-size: 900px;
+}
+button {
+    background-color: #f5d2a4;
+    color: black;
+    margin: 20px auto 0 auto;
+    margin-left:700px;
+    margin-right: auto;
+    /*margin: 100px 150px auto;
+    margin-left: 100px auto;
+    margin-right: 100px auto;*/
+    width:5%
+}
+
+form {
+    /*margin-top: 25px;
+    border-radius: 150px;
+    border-bottom-style: solid;
+    border-color: white;
+    border: 10px solid white;*/
+    margin: 150px auto 0 auto;
+    margin-right: auto;
+    margin-left: auto;
+    width:250px;
+}
+
+#Password {
+    margin: 50px auto 0 auto;
 }
 h1 {
+    color: white;
     text-align:center;
 }
 
