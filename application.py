@@ -22,3 +22,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return render_template("size.html")
+
+@app.route("/Register")
+def register():
+    return render_template("registration.html")
