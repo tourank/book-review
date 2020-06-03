@@ -3,8 +3,14 @@ body {
   background-size: 900px;
 }
 
+h1 {
+    color:white;
+    text-align:center;
+    margin:80px auto 0 auto;
+}
+
 form {
-    margin: 150px auto 0 auto;
+    margin: 50px auto 0 auto;
     margin-right: auto;
     margin-left: auto;
     width:250px;
