@@ -1,10 +1,8 @@
-import csv
 import os
 from flask import Flask, session, render_template, request 
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from wtform_fields import *
 
 app = Flask(__name__)
 # Check for environment variable
@@ -20,19 +18,18 @@ Session(app)
 engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
-app = Flask(__name__) 
-app.config['SECRET_KEY'] = 'any secret string'
-@app.route("/")
-def index():
-    return render_template("size.html")
+users = db.execute("SELECT username, password FROM usernames").fetchall() # execute this SQL command and return all of the results
+for user in users:
 
-@app.route("/Register", methods=["GET", "POST"])
-def register():
-    reg_form = RegistrationForm()
-    if reg_form.validate_on_submit():
-        return "Success!"
-    return render_template("register.html", form=reg_form)
+    print(f"{user.username} and {user.password}")
 
-@app.route("/error")
-def error():
-    return render_template("error.html")
+f = open("users.csv")
+reader = csv.reader(f)
+
+for username, password in reader:
+    db.execute("INSERT INTO usernames (username, password) VALUES (:username, :password)",
+            {"username": username, "password": password})
+db.commit()
+
+
+
