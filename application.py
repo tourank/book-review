@@ -28,10 +28,8 @@ def register():
     if reg_form.validate_on_submit():
         username = reg_form.username.data
         password = reg_form.password.data
-        # Check username exists 
-        users_object = Users.query.filter_by(username=username).first()
-        if users_object: 
-            return "Username taken"
+
+        # Add user to database 
         users = Users(username=username,password=password)
         db.session.add(users)
         db.session.commit()
